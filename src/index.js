@@ -1,3 +1,3 @@
-import server from './lib/example'
+import server from './lib/example';
 
-server
+server();

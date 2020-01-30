@@ -7,6 +7,8 @@
     "dev": "babel-node src/index.js",
     "build": "babel src -d dist",
     "start": "npm run build && node .",
+    "lint": "eslint \"**/*.js\"",
+    "lint:fix": "npm run lint -- --fix",
     "test": "npm run build && mocha --require @babel/register"
   },
   "author": "",

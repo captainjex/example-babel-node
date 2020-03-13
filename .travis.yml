@@ -11,7 +11,7 @@ script:
   - npm run build
 
 after_success:
-- if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git init; fi
+- if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then sed -i '/dist/d' .gitignore; fi
 - if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git remote add origin-dist https://${GH_TOKEN}@github.com/gaspadat/example-babel-node.git; fi
 - if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git add -A .; fi
 - if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git commit -m 'built by travis'; fi
